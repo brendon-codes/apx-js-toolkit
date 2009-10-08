@@ -1,0 +1,95 @@
+<!--
+ Apx.DateBox Demo
+ 
+ @package Aphex Toolkit
+ @author Brendon Crawford <message144 at users dot sourceforge dotnet>
+ @version	1.0
+ @see http://toolkit.aphexcreations.net
+ @created 2008-01-01
+ @copyright
+ 
+   Copyright 2007,2008 Brendon Crawford
+ 
+ @license
+ 
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU Affero General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+ 
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU Affero General Public License for more details.
+ 
+   You should have received a copy of the GNU Affero General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+-->
+<html>
+	<head>
+		<title>Aphex Toolkit: Apx.DateBox Demo</title>
+		<link rel="stylesheet" href="/main.css" />
+		<script type="text/javascript" src="/code/Apx/Apx.class.js?toolkit=JQuery&load=DateBox"></script>
+		<script type="text/javascript">
+			var datebox_demo = new Object;
+			
+			datebox_demo.conf = {
+				url : "DateBox.data.js",
+				update_url : "#",
+				elmID : 'datebox'
+			};
+			
+			datebox_demo.init = function() {
+			 Apx.Util.ajax(datebox_demo.conf.url,
+				{
+					method : 'get',
+					onSuccess : function(ret) {
+					 var data;
+						if( !(data = Apx.Util.getJSON( ret )) ){
+						 return;
+						}
+						else {
+						 datebox_demo.go(data);
+						}
+					}
+				}
+			 );
+			}
+			
+			datebox_demo.go = function(data) {
+			 new Apx.DateBox( data.records, data.vals,
+				{
+					updater : {
+						url : datebox_demo.conf.update_url ,
+						method : "get" ,
+						responseProcessor : function(transport, action) {
+							if(action == 'add') {
+							 return transport.responseText;
+							}
+						}
+					},
+					tableArgs : {
+						elm : Apx.Util.i(datebox_demo.conf.elmID),
+						cols : 4
+					}
+				}
+			 );
+			}
+			
+			Apx.Util.domload( datebox_demo.init );
+		</script>
+	</head>
+	<body>
+		<div id="main">
+			<h1><a href="/">Aphex Toolkit</a></h1>
+			<h2>Apx.DateBox Demo</h2>
+			<div id="content">
+				<p>
+					This is an interactive time based data grid with a slide control. To edit/update data, just single click on any data cell and it will become editable.
+				</p>
+				<div id="datebox" style="width:70%;"></div>
+			</div>
+		</div>
+	</body>
+</html>

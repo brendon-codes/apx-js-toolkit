@@ -1,0 +1,176 @@
+/**
+ * DateBox CSS
+ *
+ * @package Aphex Toolkit
+ * @author Brendon Crawford <message144 at users dot sourceforge dotnet>
+ * @version	1.0
+ * @see http://toolkit.aphexcreations.net
+ * @created 2008-01-01
+ * @copyright
+ *
+ *  Copyright 2007,2008 Brendon Crawford
+ *
+ * @license
+ *
+ *   This program is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU Affero General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU Affero General Public License for more details.
+ *
+ *   You should have received a copy of the GNU Affero General Public License
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+ 
+.apx_datebox_table,
+.apx_datebox_table *
+{
+	-moz-box-sizing : border-box;
+	font-family : Arial,Helvetica,sans-serif;
+}
+.apx_datebox_table .row_none
+{
+	/* background-color:#FFFFFF; */
+	border : none;
+}
+.apx_datebox_table .date_head
+{
+	background-color:#B9B900;
+}
+.apx_datebox_table .row_name,
+.apx_datebox_table .row_updated
+{
+	background-color: #B2B2B2 !important;
+}
+.apx_datebox_table
+{
+	/* background-color:#B9B900; */
+	border-collapse:collapse;
+	width : 90% !important;
+}
+.apx_datebox_table td
+{
+	border:1px solid #FFFFFF;
+}
+.apx_datebox_table thead td
+{
+	color:#FFFFFF;
+	font-size:12px;
+	height:25px;
+	text-align:center;
+}
+.apx_datebox_table tbody input
+{
+	background-color:#CCCC66;
+	border:1px solid #5B5B00;
+	width:33px;
+}
+.apx_datebox_table tbody td
+{
+	background-color:#ECECC6;
+	height:21px;
+	margin:0px 0px 20px;
+	padding:0px;
+	text-align:center;
+}
+.apx_datebox_table tbody tr,
+.apx_datebox_table tbody td
+{
+	-moz-box-sizing:padding-box !important;
+}
+.apx_datebox_table tbody td.row_data
+{
+	border-bottom:2px solid #B9B900;
+	width : 58px;
+}
+.apx_datebox_table tbody td.row_meta
+{
+	border-bottom : 2px solid #EFEFEF;
+}
+.apx_datebox_table tbody td,
+.apx_datebox_table div.metarow
+{
+	font-size:12px;
+	padding:7px 5px 5px;
+	vertical-align:middle;
+}
+.apx_datebox_table span.metaUpdated
+{
+	left:80%;
+	position:absolute;
+}
+.apx_datebox_table #trackbg
+{
+	-moz-box-sizing:padding-box !important;
+	background-color:#6D6A03;
+	height:25px;
+	padding:10px;
+	vertical-align:middle;
+}
+.apx_datebox_table div.metarow div.rcorner,
+.apx_datebox_table div.metarow div.lcorner
+{
+	background-repeat:no-repeat;
+	border:medium none;
+	height:31px;
+	position:absolute;
+	top:0px;
+	width:5px;
+}
+.apx_datebox_table div.metarow div.lcorner
+{
+	left:0px;
+}
+.apx_datebox_table div.metarow div.rcorner
+{
+	right:0px;
+}
+.apx_datebox_table div.metarow
+{
+	position:relative;
+}
+.apx_datebox_table #trackbg div.lcorner
+{
+	background-image:url(images/usagearrorow_left.gif);
+	border:medium none;
+	height:25px;
+	left:0px;
+	position:absolute;
+	top:0px;
+	width:11px;
+}
+.apx_datebox_table #trackbg div.rcorner
+{
+	background-image:url(images/usagearrorow_right.gif);
+	height:25px;
+	position:absolute;
+	right:0px;
+	top:0px;
+	width:11px;
+}
+.apx_datebox_table #track1
+{
+	background-color:#FFFFFF;
+	height:4px;
+	position:relative !important;
+}
+.apx_datebox_table #handle1
+{
+	background:#6D6A03 url(images/year_mark.gif) no-repeat scroll 100%;
+	border:medium none;
+	color:#FFFFFF;
+	cursor:move;
+	font-size:10px;
+	height:16px;
+	line-height:16px;
+	position:absolute !important;
+	text-align:center;
+	top:-5px !important;
+	vertical-align:middle;
+	width:38px;
+}

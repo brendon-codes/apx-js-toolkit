@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<style type="text/css">
+			#sliderId
+			{
+				background-color : red;
+				width : 200px;
+				height : 50px;
+			}
+			#handle
+			{
+				background-color : green;
+				width : 25px;
+				height : 50px;
+			}
+		</style>
+		<script type="text/javascript" src="../jquery.js"></script>
+		<script type="text/javascript" src="../jquery.dimensions.js"></script>
+		<script type="text/javascript" src="../ui.mouse.js"></script>
+		<script type="text/javascript" src="../ui.slider.js"></script>
+		<script type="text/javascript">
+			$(window).bind("load",function(){
+				$('#sliderId').slider({
+					handle : '#handle',
+					steps: 10,
+					minValue: 0,
+					maxValue: 10,
+					slide : function() {
+					 console.log(arguments);
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="sliderId">
+			<div id="handle"><span></span></div>	
+		</div>
+	</body>
+</html>

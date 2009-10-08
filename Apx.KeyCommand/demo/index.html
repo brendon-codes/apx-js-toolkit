@@ -1,0 +1,92 @@
+<!--
+ Apx.KeyCommand Demo
+ 
+ @package Aphex Toolkit
+ @author Brendon Crawford <message144 at users dot sourceforge dotnet>
+ @version	1.0
+ @see http://toolkit.aphexcreations.net
+ @created 2008-01-01
+ @copyright
+ 
+   Copyright 2007,2008 Brendon Crawford
+ 
+ @license
+ 
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU Affero General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+ 
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU Affero General Public License for more details.
+ 
+   You should have received a copy of the GNU Affero General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+-->
+<html>
+	<head>
+		<link rel="stylesheet" href="/main.css" />
+		<script type="text/javascript" src="/code/Apx/Apx.class.js?toolkit=Prototype&load=KeyCommand"></script>
+		<script type="text/javascript">
+			
+			Apx.KC.register( ['SHIFT','A'], ['up','down','press'], function(action, type){
+				if(type == 'down' || type == 'press') {
+				 Apx.Util.writeText("thestatus", 'SHIFT A');
+			 	}
+				else {
+				 Apx.Util.empty("thestatus");
+				}
+			});
+			
+			Apx.KC.register( ['SHIFT','ALT','A'], ['up','down','press'], function(action, type){
+				if(type == 'down' || type == 'press') {
+				 Apx.Util.writeText("thestatus", 'SHIFT ALT A');
+			 	}
+				else {
+				 Apx.Util.empty("thestatus");
+				}
+			});
+			
+			Apx.KC.register( ['F2'], ['up','down','press'], function(action, type){
+				if(type == 'down' || type == 'press') {
+				 Apx.Util.writeText("thestatus", 'F2');
+			 	}
+				else {
+				 Apx.Util.empty("thestatus");
+				}
+			});
+			
+			Apx.KC.register( ['RETURN'], ['up','down','press'], function(action, type){
+				if(type == 'down' || type == 'press') {
+				 Apx.Util.writeText("thestatus", 'RETURN/ENTER');
+			 	}
+				else {
+				 Apx.Util.empty("thestatus");
+				}
+			});
+			
+		</script>
+	</head>
+	<body>
+		<div id="main">
+			<h1><a href="/">Aphex Toolkit</a></h1>
+			<h2>Apx.KeyCommand Demo</h2>
+			<div id="content">
+				<p>
+					Apx.KeyCommand is a comprehensive keyboard command capturing library. As you may know, capturing key input across browsers and operating systems can get quite nasty. So, KeyCommand takes care of a lot of the hard work for you.
+				</p>
+				<p>To demo, press any of the following keyboard combinations.</p>
+				<ul>
+					<li>SHIFT A</li>
+					<li>SHIFT ALT A</li>
+					<li>F2</li>
+					<li>RETURN/ENTER</li>
+				</ul>
+				<strong>Action Pressed: </strong><span style="color:red;" id="thestatus"></span>
+			</div>
+		</div>
+	</body>
+</html>

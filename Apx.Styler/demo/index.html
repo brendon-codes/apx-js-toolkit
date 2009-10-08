@@ -1,0 +1,74 @@
+<!--
+ Apx.Styler Demo
+ 
+ @package Aphex Toolkit
+ @author Brendon Crawford <message144 at users dot sourceforge dotnet>
+ @version	1.0
+ @see http://toolkit.aphexcreations.net
+ @created 2008-01-01
+ @copyright
+ 
+   Copyright 2007,2008 Brendon Crawford
+ 
+ @license
+ 
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU Affero General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+ 
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU Affero General Public License for more details.
+ 
+   You should have received a copy of the GNU Affero General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+-->
+<html>
+	<head>
+		<title>Aphex Toolkit: Apx.SlideShow Demo</title>
+		<link rel="stylesheet" href="/main.css" />
+		<script type="text/javascript" src="/code/Apx/Apx.class.js?toolkit=Prototype&load=Styler"></script>
+		<script type="text/javascript">
+			var styler = new Apx.Styler;
+			
+			function applyStyler() {
+			 var elm = document.getElementById('data');
+			 styler.processRawRules( elm.value );
+			}
+			
+			function clearStyler() {
+			 var elm = document.getElementById('data');
+			 styler.clearAll();				
+			}
+		</script>
+	</head>
+	<body>
+		<div id="main">
+			<h1><a href="/">Aphex Toolkit</a></h1>
+			<h2>Apx.SlideShow Demo</h2>
+			<div id="content">
+				<p>
+					Apx.Styler offers a cross browser way to dynamically add and remove stylesheet rules to a page.
+				</p>
+				<p>
+					Use the following text field to test custom rules for this page.
+				</p>
+				<div>
+<textarea id='data' style="width:400px; height:300px; border:1px solid #000; background-color:#FFC;">
+body {
+	background-color : blue;
+	color : red;
+}
+</textarea>
+					<div>
+						<input type="button" value="Apply" onclick="applyStyler()" />
+						<input type="button" value="Clear" onclick="clearStyler()" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
